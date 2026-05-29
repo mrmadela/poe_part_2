@@ -10,16 +10,10 @@ namespace poe_part2
     {// start of class
 
         // Store previous topic
-        public static string previousTopic =
-            "";
-
-
+        public static string previousTopic = "";
 
         // Store previous response
-        public static string previousResponse =
-            "";
-
-
+        public static string previousResponse = "";
 
         // Follow-up keywords
         static string[] followUpWords =
@@ -34,15 +28,12 @@ namespace poe_part2
         };
 
 
-
         // Detect follow-up message
-        public static bool is_followup(
-            string[] words
-        )
+        public static bool is_followup(string[] words)
         {// start of method
 
             foreach (string word in words)
-            {
+            {// Check if any follow-up keywords are present
                 if (
                     followUpWords.Contains(word)
                 )
@@ -58,9 +49,7 @@ namespace poe_part2
 
 
         // Add previous topic
-        public static string continue_topic(
-            string question
-        )
+        public static string continue_topic(string question)
         {// start of method
 
             // Check previous topic
@@ -98,6 +87,7 @@ namespace poe_part2
         )
         {// start of method
 
+            // Save response for future reference
             previousResponse = response;
 
         }// end of method
