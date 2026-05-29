@@ -70,9 +70,9 @@ namespace poe_part2
                 )
             )
             {
-                question +=
-                    " " +
-                    previousTopic;
+                // Add previous topic to question
+                question += " " + previousTopic;
+
             }
 
             return question;
@@ -82,11 +82,10 @@ namespace poe_part2
 
 
         // Save current topic
-        public static void save_topic(
-            string topic
-        )
+        public static void save_topic(string topic)
         {// start of method
 
+            // Save topic for future reference
             previousTopic = topic;
 
         }// end of method

@@ -62,8 +62,8 @@ namespace poe_part2
                                 interests.Split(',');
 
                             // Pick random topic
-                            Random random =
-                                new Random();
+                            Random random = new Random();
+
 
                             string selectedTopic =
                                 topicList[
@@ -123,8 +123,9 @@ namespace poe_part2
                                 recallMessage
                             );
 
-
+                            // Reset counter after showing interest
                             break;
+
                         }// end of if statement to find user
 
                     }// end of foreach loop to find user
