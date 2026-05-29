@@ -78,13 +78,13 @@ namespace poe_part2
         {//  start of submit_name method
 
             // check if the user has entered the name
-            if (string.IsNullOrWhiteSpace(user_name.Text)) 
+            if (string.IsNullOrWhiteSpace(user_name.Text))
             {// start of if statement
 
                 // display error message
                 MessageBox.Show(
                     "Please enter your name before continuing.");
-                    
+
 
                 // keep focus on textbox
                 user_name.Focus();
@@ -102,6 +102,7 @@ namespace poe_part2
             chatting_grid.Visibility = Visibility.Visible;
 
         }// end of sibmit_name method
+
 
 
         // send question event hendler

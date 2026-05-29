@@ -60,6 +60,7 @@ namespace poe_part2
             //temp variable
             string filename = "user_names.txt";
 
+            //boolean variable to check if the name is found or not
             bool found_name = false;
 
 
