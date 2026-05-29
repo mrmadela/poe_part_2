@@ -32,15 +32,17 @@ namespace poe_part2
         public static bool is_followup(string[] words)
         {// start of method
 
+            // Check if any follow-up keywords are present
             foreach (string word in words)
-            {// Check if any follow-up keywords are present
+            {// start of foreach loop
+
                 if (
                     followUpWords.Contains(word)
                 )
                 {
                     return true;
                 }
-            }
+            }// end of foreach loop
 
             return false;
 
