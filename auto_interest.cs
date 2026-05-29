@@ -78,33 +78,33 @@ namespace poe_part2
                             // Personalized responses
                             if (selectedTopic.Contains("phishing"))
                             {
-                                recallMessage =
-                                    "Reminder: As someone interested in phishing, remember to avoid clicking suspicious links and always verify email senders.";
+                                recallMessage = "Reminder: As someone interested in phishing, remember to avoid clicking suspicious links and always verify email senders.";
+
                             }
                             else if (selectedTopic.Contains("password"))
                             {
-                                recallMessage =
-                                    "Reminder: As someone interested in password security, remember to use strong passwords and enable two-factor authentication.";
+                                recallMessage = "Reminder: As someone interested in password security, remember to use strong passwords and enable two-factor authentication.";
+
                             }
                             else if (selectedTopic.Contains("firewall"))
                             {
-                                recallMessage =
-                                    "Reminder: As someone interested in firewalls, make sure your firewall is always enabled to help block unauthorized access.";
+                                recallMessage = "Reminder: As someone interested in firewalls, make sure your firewall is always enabled to help block unauthorized access.";
+
                             }
                             else if (selectedTopic.Contains("cybersecurity"))
                             {
-                                recallMessage =
-                                    "Reminder: As someone interested in cybersecurity, staying updated on new cyber threats can help keep your data safe.";
+                                recallMessage = "Reminder: As someone interested in cybersecurity, staying updated on new cyber threats can help keep your data safe.";
+
                             }
                             else if (selectedTopic.Contains("fraud"))
                             {
-                                recallMessage =
-                                    "Reminder: As someone interested in fraud prevention, always verify transactions and never share sensitive information online.";
+                                recallMessage = "Reminder: As someone interested in fraud prevention, always verify transactions and never share sensitive information online.";
+
                             }
                             else if (selectedTopic.Contains("vpn"))
                             {
-                                recallMessage =
-                                    "Reminder: As someone interested in VPNs, using a trusted VPN can improve your privacy and protect your online activity.";
+                                recallMessage = "Reminder: As someone interested in VPNs, using a trusted VPN can improve your privacy and protect your online activity.";
+
                             }
                             else
                             {
