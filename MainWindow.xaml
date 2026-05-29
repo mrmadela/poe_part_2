@@ -1,0 +1,371 @@
+﻿<Window x:Class="poe_part2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:poe_part2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid><!-- Start of Parent Grid -->
+        
+        <!-- Background color grid -->
+        <Grid.Background><!-- start of color grid -->
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                <GradientStop Color="#1B1038" Offset="0"/>
+                <GradientStop Color="#05071F" Offset="0.5"/>
+                <GradientStop Color="#0B1235" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background><!-- end of color grid-->
+        
+        <!-- grid for welcome page with log -->
+        <Grid  
+            x:Name="greet_grid"
+            Visibility="Visible"
+            ><!-- start of logo grid -->
+            
+            <!-- StackPanel for logo and app name to stay together -->
+            <StackPanel  
+                Height="250"
+                Width="300"
+                Margin="0,0,0,150"
+                ><!-- start of logo stackpanel -->
+                
+                <!-- desplay logo -->
+                <Image  
+                    Source="/Logo.jpg"
+                    Height="120"
+                    Width="300"
+                    Margin="0,0,0,10"
+                />
+                
+                <!-- Textblock for App name -->
+                <TextBlock
+                    FontSize="50"
+                    FontWeight="Bold"
+                    Margin="0,0,0,5"
+                    HorizontalAlignment="Center"
+                    FontFamily="Segoe UI">
+                    
+                    <Run 
+                        Text="Chat"
+                        Foreground="White"
+                    />
+
+                    <Run 
+                        Text="Bot"
+                        Foreground="DeepSkyBlue"
+                    />
+                </TextBlock><!-- end of textblock app name-->
+
+                <!-- cyber Assistant -->
+                <TextBlock 
+                   Text="CYBER ASSISTANT"
+                   FontSize="14"
+                   Foreground="#B8B8C5"
+                   HorizontalAlignment="Center"
+                   FontFamily="Segoe UI"
+                />
+
+            </StackPanel>  <!-- end of logo stackpanel-->
+
+            
+            
+            <!-- grid for Welcome message -->
+            <Grid  
+                x:Name="welcome_grid"
+                Height="150"
+                Width="350"
+                Margin="0,250,0,0"
+                Visibility="Visible"
+                ><!-- start of welcome grid -->
+
+                <!-- background border -->
+                <Border  
+                    CornerRadius="25"
+                    Background="#1a1a2e"
+                    BorderBrush="DeepSkyBlue"
+                    BorderThickness="2"
+                    ><!-- start of border background-->
+                    
+                    <!-- stackpanel for content inside the background border -->
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        ><!-- start of content stackpanel -->
+                        
+                        <!-- welcome text -->
+                        <TextBlock
+                            Text="Welcoming you..."
+                            Foreground="#B8B8C5"
+                            FontSize="24"
+                            FontWeight="SemiBold"
+                            FontFamily="Segoe UI Light"
+                            Margin="0,10,0,20"
+                            HorizontalAlignment="Center"
+                        />
+
+                        <!-- button to start the AI chat -->
+                        <Button  
+                            Width="180"
+                            Height="50"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="start_app">
+                            
+                            <!-- button background color -->
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="#1E3A8A" Offset="0"/>
+                                    <GradientStop Color="#2563EB" Offset="0.5"/>
+                                    <GradientStop Color="#38BDF8" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border 
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                        
+                                        <TextBlock
+                                            Text="Start App"
+                                            FontFamily="Segoe UI"
+                                            FontSize="18"
+                                            Foreground="White"
+                                            FontWeight="SemiBold"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                        />
+
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                            
+                        </Button>
+                            
+                    </StackPanel><!-- end of content stackpanel -->
+                    
+                </Border><!-- end of border background -->
+                
+
+            </Grid><!-- end of welcome grid -->
+              
+        </Grid><!-- end of welcome grid -->
+        
+        
+        
+        <!-- grid to prompt the user for name -->
+        <Grid
+            x:Name="name_grid"
+            Height="250"
+            Width="600"
+            Visibility="Hidden"
+            ><!-- start of askname_grid -->
+
+            <!-- stackpanel to keep textbox and the button together -->
+            <StackPanel>
+
+                <!-- background border -->
+                <Border  
+                    CornerRadius="25"
+                    Background="#1a1a2e"
+                    BorderBrush="DeepSkyBlue"
+                    BorderThickness="2">
+
+                    <!-- StackPanel for the textblock and textbox border-->
+                    <StackPanel
+                        Height="220"
+                        >
+
+                        <!-- question title -->
+                        <TextBlock
+                            Text="Enter Your Name"
+                            FontSize="26"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            FontFamily="Segoe UI"
+                            Margin="0,0,0,20"
+                            HorizontalAlignment="Center"
+                        />
+
+                        <!-- textbox in a border -->
+                        <Border
+                            Height="50"
+                            Width="500"
+                            CornerRadius="15"
+                            Background="#2A2A40"
+                            BorderBrush="#38BDF8"
+                            BorderThickness="1.5"
+                            Margin="0,0,0,25">
+
+                            <TextBox 
+                                x:Name="user_name"
+                                Width="300"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Right"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="White"
+                                FontSize="18"
+                                FontFamily="Segoe UI"
+                                CaretBrush="White"
+                            />
+
+                        </Border>
+
+                        <!-- submit the name button -->
+                        <Button 
+                            Height="45"
+                            Width="180"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="submit_name">
+
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="#2563EB" Offset="0"/>
+                                    <GradientStop Color="#38BDF8" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border
+                                        CornerRadius="18"
+                                        Background="{TemplateBinding Background}">
+
+                                        <TextBlock
+                                            Text="Continue"
+                                            Foreground="White"
+                                            FontSize="18"
+                                            FontWeight="SemiBold"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                        />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button><!-- end of contiue button -->
+
+                    </StackPanel><!-- end of textblock and textbox -->
+
+                </Border><!-- end of askname grid -->
+
+            </StackPanel><!-- end of  stackpanel of askname grid -->
+
+        </Grid><!-- end of askname_grid -->
+
+        
+        
+        <!-- grid to start conversation with the chatbot -->
+        <Grid 
+            x:Name="chatting_grid"
+            Visibility="Hidden"
+            ><!-- start of chatting grid -->
+
+            <!-- Main chatting container -->
+            <Border
+                Height="420"
+                Width="760"
+                CornerRadius="25"
+                Background="#1a1a2e"
+                BorderBrush="DeepSkyBlue"
+                BorderThickness="2"
+                Padding="15"
+                ><!-- start of main border -->
+
+
+                <!-- Main content grid -->
+                <Grid
+                    x:Name="content_grid"
+                    >
+
+                    <!-- ListView to display chats -->
+                    <ListView
+                        x:Name="chats"
+                        Height="300"
+                        Margin="0,0,0,50"
+                        Background="#0B1235"
+                        BorderBrush="DeepSkyBlue"
+                        BorderThickness="1"
+                        Foreground="White"
+                        FontFamily="Segoe UI"
+                        ><!-- start of listvie -->
+
+                    </ListView><!-- end of listview -->
+
+                    <!-- Question textbox -->
+                    <TextBox
+                        x:Name="question"
+                        Height="50"
+                        Width="540"
+                        Margin="0,330,180,0"
+                        VerticalAlignment="Top"
+                        FontSize="14"
+                        FontFamily="Segoe UI"
+                        Foreground="White"
+                        Background="#0B1235"
+                        BorderBrush="DeepSkyBlue"
+                        BorderThickness="2"
+                        CaretBrush="White"
+                        Padding="15,10"
+                        TextWrapping="Wrap"
+                        />
+
+
+
+                    <!-- Send button -->
+                    <Button
+                        Height="50"
+                        Width="160"
+                        Margin="550,330,0,0"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="send"
+                        ><!-- start of send button -->
+                        
+                        <!-- Button background -->
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#1E3A8A" Offset="0"/>
+                                <GradientStop Color="#2563EB" Offset="0.5"/>
+                                <GradientStop Color="#38BDF8" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+
+                        <!-- Rounded button -->
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+
+                                <Border
+                                    CornerRadius="18"
+                                    Background="{TemplateBinding Background}"
+                                    >
+
+                                    <TextBlock
+                                        Text="Send Message"
+                                        FontFamily="Segoe UI"
+                                        FontSize="16"
+                                        Foreground="White"
+                                        FontWeight="SemiBold"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        />
+
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button><!-- end of send button -->
+
+                </Grid><!-- end of content grid -->
+
+            </Border><!-- end of main border-->
+
+        </Grid><!-- end of chatting grid -->
+        
+
+    </Grid><!-- End of Parent Grid -->
+</Window>

@@ -1,0 +1,108 @@
+﻿using System;
+using System.Linq;
+
+namespace poe_part2
+{// start of namespace
+
+    // Class used to manage
+    // chatbot conversation memory
+    public class conversation_memory
+    {// start of class
+
+        // Store previous topic
+        public static string previousTopic =
+            "";
+
+
+
+        // Store previous response
+        public static string previousResponse =
+            "";
+
+
+
+        // Follow-up keywords
+        static string[] followUpWords =
+        {
+            "more",
+            "another",
+            "continue",
+            "explain",
+            "again",
+            "details",
+            "tell"
+        };
+
+
+
+        // Detect follow-up message
+        public static bool is_followup(
+            string[] words
+        )
+        {// start of method
+
+            foreach (string word in words)
+            {
+                if (
+                    followUpWords.Contains(word)
+                )
+                {
+                    return true;
+                }
+            }
+
+            return false;
+
+        }// end of method
+
+
+
+        // Add previous topic
+        public static string continue_topic(
+            string question
+        )
+        {// start of method
+
+            // Check previous topic
+            if (
+                !string.IsNullOrWhiteSpace(
+                    previousTopic
+                )
+            )
+            {
+                question +=
+                    " " +
+                    previousTopic;
+            }
+
+            return question;
+
+        }// end of method
+
+
+
+        // Save current topic
+        public static void save_topic(
+            string topic
+        )
+        {// start of method
+
+            previousTopic = topic;
+
+        }// end of method
+
+
+
+        // Save chatbot response
+        public static void save_response(
+            string response
+        )
+        {// start of method
+
+            previousResponse = response;
+
+        }// end of method
+
+    }// end of class
+
+}// end of namespace
