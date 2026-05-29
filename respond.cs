@@ -297,7 +297,7 @@ namespace poe_part2
         }// end of word method
 
 
-
+        // method to store the list of answers
         public void answers(ArrayList add_answers)
         {//start of method
 
